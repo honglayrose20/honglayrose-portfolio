@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Home } from 'lucide-react';
-import { useNavigate } from 'react-router';
 
 const navItems = [
   { id: 'home',           label: 'ABOUT' },
@@ -8,13 +6,8 @@ const navItems = [
   { id: 'contact',        label: 'CONTACT' },
 ];
 
-interface NavigationProps {
-  onOpenHub?: () => void;
-}
-
-export function Navigation({ onOpenHub }: NavigationProps) {
+export function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,15 +30,6 @@ export function Navigation({ onOpenHub }: NavigationProps) {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleHome = () => {
-    if (onOpenHub) {
-      onOpenHub();
-      return;
-    }
-
-    navigate('/');
-  };
-
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-12 bg-white/30 backdrop-blur-xl border-b border-white/20 shadow-sm"
@@ -53,15 +37,8 @@ export function Navigation({ onOpenHub }: NavigationProps) {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
 
-        {/* Mobile: back button (left) + name pill (right) */}
+        {/* Mobile: name pill */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={handleHome}
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 bg-white/60 hover:bg-white transition-colors duration-200"
-            aria-label="Home"
-          >
-            <Home className="w-3.5 h-3.5 text-gray-700" />
-          </button>
           <button
             onClick={() => scrollTo('home')}
             className="border border-gray-300 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-800 bg-white/60 hover:bg-white transition-colors duration-200"

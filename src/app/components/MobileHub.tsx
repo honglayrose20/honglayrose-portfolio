@@ -51,7 +51,7 @@ export function MobileHub({ onEnter }: MobileHubProps) {
     setPressed(tile.id);
     setTimeout(() => {
       if (tile.id === 'portfolio') {
-        navigate('/');
+        navigate('/portfolio');
         onEnter();
       } else if (tile.id === 'finds') {
         navigate('/best-finds');
@@ -91,6 +91,12 @@ export function MobileHub({ onEnter }: MobileHubProps) {
           <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-1">Welcome to my space</p>
           <h1 className="text-2xl font-bold text-white leading-tight">Honglay Rose Lim</h1>
           <p className="text-white/80 text-sm mt-1">UX Designer · Project Manager · Mobile Dev</p>
+          <a
+            href="https://honglayrose.com/portfolio"
+            className="mt-3 rounded-full bg-white/20 px-4 py-2 text-xs font-semibold text-white underline-offset-4 hover:underline"
+          >
+            honglayrose.com/portfolio
+          </a>
         </div>
       </div>
 

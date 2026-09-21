@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Certifications } from './components/Certifications';
@@ -22,6 +22,8 @@ function Portfolio() {
   const [hubDismissed, setHubDismissed] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showAdminButton, setShowAdminButton] = useState(false);
+  const location = useLocation();
+  const showMobileHub = location.pathname === '/' && !hubDismissed;
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 500);
@@ -70,10 +72,10 @@ function Portfolio() {
 
   return (
     <div className="min-h-screen bg-white antialiased overflow-x-hidden">
-      {!hubDismissed && <MobileHub onEnter={() => setHubDismissed(true)} />}
+      {showMobileHub && <MobileHub onEnter={() => setHubDismissed(true)} />}
       <AnimatedBackground />
 
-      <Navigation onOpenHub={() => setHubDismissed(false)} />
+      <Navigation />
 
       {showAdminButton && (
         <div className="fixed top-24 right-6 z-40 animate-fade-in">
@@ -135,6 +137,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Portfolio />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/design-works" element={<DesignWorks />} />
         <Route path="/best-finds" element={<BestFinds />} />
         <Route path="/resume" element={<ResumePage />} />
