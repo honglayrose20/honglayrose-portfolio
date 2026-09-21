@@ -88,13 +88,6 @@ export function Hero() {
               delight. I bridge the gap between human needs and technology, so digital tools
               feel like second nature.
             </p>
-            <button
-              onClick={() => navigate('/resume')}
-              className="mt-10 w-full border border-orange-200 bg-white text-orange-600 shadow-sm hover:bg-orange-50 hover:border-orange-300 rounded-2xl px-5 py-3 text-sm font-medium flex items-center justify-between transition-colors duration-200"
-            >
-              Download CV
-              <Download className="w-5 h-5" />
-            </button>
           </div>
 
           {/* ── Audio intro ── */}
@@ -208,6 +201,17 @@ export function Hero() {
               ) : (
                 <><ChevronDown className="w-3.5 h-3.5" /> Show more</>
               )}
+            </button>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 sm:p-8 flex min-h-64 flex-col justify-between">
+            <h2 className="text-7xl sm:text-8xl font-bold leading-none tracking-tight text-gray-950">CV</h2>
+            <button
+              onClick={() => navigate('/resume')}
+              className="mt-8 w-full bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-6 py-4 text-base font-medium flex items-center justify-between transition-colors duration-200"
+            >
+              Download
+              <Download className="w-6 h-6" />
             </button>
           </div>
 
