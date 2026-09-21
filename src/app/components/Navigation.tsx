@@ -8,7 +8,11 @@ const navItems = [
   { id: 'contact',        label: 'CONTACT' },
 ];
 
-export function Navigation() {
+interface NavigationProps {
+  onOpenHub?: () => void;
+}
+
+export function Navigation({ onOpenHub }: NavigationProps) {
   const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
 
@@ -33,16 +37,13 @@ export function Navigation() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const goHome = () => {
+  const handleHome = () => {
+    if (onOpenHub) {
+      onOpenHub();
+      return;
+    }
+
     navigate('/');
-    window.requestAnimationFrame(() => {
-      const el = document.getElementById('home');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
   };
 
   return (
@@ -55,7 +56,7 @@ export function Navigation() {
         {/* Mobile: back button (left) + name pill (right) */}
         <div className="flex md:hidden items-center gap-2">
           <button
-            onClick={goHome}
+            onClick={handleHome}
             className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 bg-white/60 hover:bg-white transition-colors duration-200"
             aria-label="Home"
           >

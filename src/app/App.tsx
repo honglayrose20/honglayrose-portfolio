@@ -73,7 +73,7 @@ function Portfolio() {
       {!hubDismissed && <MobileHub onEnter={() => setHubDismissed(true)} />}
       <AnimatedBackground />
 
-      <Navigation />
+      <Navigation onOpenHub={() => setHubDismissed(false)} />
 
       {showAdminButton && (
         <div className="fixed top-24 right-6 z-40 animate-fade-in">
