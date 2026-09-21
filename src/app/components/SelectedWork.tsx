@@ -171,9 +171,17 @@ export function SelectedWork() {
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                {/* Job title */}
-                <span className="flex-1 text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors duration-200">
-                  {exp.roles.join(' · ')}
+                {/* Job title + mobile company/date */}
+                <span className="flex-1 min-w-0">
+                  <span className="block text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors duration-200">
+                    {exp.roles.join(' · ')}
+                  </span>
+                  <span className="mt-2 flex flex-wrap items-center gap-2 sm:hidden">
+                    <span className="text-xs bg-orange-50 text-orange-600 border border-orange-100 rounded-full px-2 py-0.5">
+                      {exp.company}
+                    </span>
+                    <span className="text-xs text-gray-400">{exp.period}</span>
+                  </span>
                 </span>
 
                 {/* Company + period */}
