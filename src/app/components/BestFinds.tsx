@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Package, Search, ShoppingBag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Package, Search } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import bestFindBooxCover from '../../imports/best-find-boox-cover.png';
@@ -144,7 +144,16 @@ export function BestFinds() {
                     {find.category}
                   </span>
                 </div>
-                <p className="mb-3 flex-1 text-xs leading-snug text-gray-600 sm:mb-5 sm:text-sm sm:leading-relaxed">{find.description}</p>
+                <p
+                  className="mb-3 flex-1 overflow-hidden text-xs leading-snug text-gray-600 sm:mb-5 sm:text-sm sm:leading-relaxed"
+                  style={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 4,
+                  }}
+                >
+                  {find.description}
+                </p>
                 {find.link && (
                   <Button
                     asChild
@@ -152,7 +161,6 @@ export function BestFinds() {
                     className="h-9 w-full rounded-full bg-orange-500 text-xs font-semibold text-white shadow-sm hover:bg-orange-600 sm:h-10 sm:text-sm"
                   >
                     <a href={find.link} target="_blank" rel="noreferrer">
-                      <ShoppingBag className="mr-2 h-4 w-4" />
                       Buy on Shopee
                       <ExternalLink className="ml-2 h-3.5 w-3.5" />
                     </a>
