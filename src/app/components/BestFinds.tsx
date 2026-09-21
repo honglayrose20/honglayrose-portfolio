@@ -1,6 +1,9 @@
 import { ArrowLeft, ExternalLink, Package, Search, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import bestFindBooxCover from '../../imports/best-find-boox-cover.png';
+import bestFindLoveSoteriaGriptok from '../../imports/best-find-love-soteria-griptok.png';
+import bestFindCartoonGriptok from '../../imports/best-find-cartoon-griptok.png';
 import { Button } from './ui/button';
 
 type Marketplace = 'Shopee' | 'TikTok Shop' | 'Lazada';
@@ -26,33 +29,42 @@ const finds: Find[] = [
     accent: 'from-stone-100 via-white to-orange-50',
   },
   {
-    name: 'A useful everyday essential',
-    category: 'Everyday',
-    marketplace: 'TikTok Shop',
-    description: 'A placeholder for the products that make daily routines easier, calmer, or more enjoyable.',
-    accent: 'from-yellow-100 via-orange-50 to-white',
+    name: 'Murmole BOOX Go 7 Quote Cover',
+    category: 'Tech',
+    marketplace: 'Shopee',
+    description: 'A slim magnetic detachable folio cover with an acrylic shell for BOOX Go 7, Go Color 7, Leaf 3, and Leaf 3C devices.',
+    image: bestFindBooxCover,
+    link: 'https://s.shopee.ph/9V1eKRelfY',
+    accent: 'from-stone-100 via-white to-amber-50',
   },
   {
-    name: 'A thoughtful little upgrade',
+    name: 'Love Soteria Magnetic Bookish Griptok',
     category: 'Lifestyle',
-    marketplace: 'Lazada',
-    description: 'Use this space for the small discoveries worth sharing with friends and fellow shoppers.',
-    accent: 'from-amber-100 via-yellow-50 to-white',
+    marketplace: 'Shopee',
+    description: 'A cute magnetic bookish griptok with pastel reader-core designs for Kindle, phones, and cozy reading setups.',
+    image: bestFindLoveSoteriaGriptok,
+    link: 'https://s.shopee.ph/7VGZxRmX8a',
+    accent: 'from-pink-100 via-white to-indigo-50',
+  },
+  {
+    name: 'Korea Cute Cartoon Spin Magnetic Phone Griptok',
+    category: 'Lifestyle',
+    marketplace: 'Shopee',
+    description: 'A foldable magnetic grip tok stand with cute cartoon designs for iPhone cases, wireless charging setups, and easy phone holding.',
+    image: bestFindCartoonGriptok,
+    link: 'https://s.shopee.ph/60RmB8grfH',
+    accent: 'from-rose-100 via-white to-sky-50',
   },
 ];
 
-const marketplaces: Array<'All' | Marketplace> = ['All', 'Shopee', 'TikTok Shop', 'Lazada'];
-const categories = ['All', 'Home', 'Beauty', 'Tech', 'Travel', 'Lifestyle', 'Fashion'];
+const marketplaces: Array<'All' | Marketplace> = ['All', 'Shopee'];
 
 export function BestFinds() {
   const navigate = useNavigate();
   const [activeMarketplace, setActiveMarketplace] = useState<'All' | Marketplace>('All');
-  const [activeCategory, setActiveCategory] = useState('All');
 
   const visibleFinds = finds.filter((find) => {
-    const marketplaceMatches = activeMarketplace === 'All' || find.marketplace === activeMarketplace;
-    const categoryMatches = activeCategory === 'All' || find.category === activeCategory;
-    return marketplaceMatches && categoryMatches;
+    return activeMarketplace === 'All' || find.marketplace === activeMarketplace;
   });
 
   return (
@@ -92,7 +104,7 @@ export function BestFinds() {
           <div className="pointer-events-none absolute -right-24 top-10 hidden h-44 w-64 rotate-[-12deg] rounded-[45%] bg-orange-200/40 sm:block" />
         </section>
 
-        <section aria-label="Filter by marketplace" className="mb-4 flex gap-2 overflow-x-auto pb-1">
+        <section aria-label="Filter by marketplace" className="mb-7 flex gap-2 overflow-x-auto border-b border-orange-100 pb-3">
           {marketplaces.map((marketplace) => (
             <button
               key={marketplace}
@@ -104,25 +116,7 @@ export function BestFinds() {
                   : 'border-transparent bg-white/80 text-gray-700 hover:border-orange-200 hover:text-orange-600'
               }`}
             >
-              {marketplace !== 'All' && <span className={`h-4 w-4 rounded-sm ${marketplace === 'Shopee' ? 'bg-orange-500' : marketplace === 'Lazada' ? 'bg-fuchsia-500' : 'bg-gray-950'}`} />}
               {marketplace}
-            </button>
-          ))}
-        </section>
-
-        <section aria-label="Filter by category" className="mb-7 flex gap-2 overflow-x-auto border-b border-orange-100 pb-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => setActiveCategory(category)}
-              className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors ${
-                activeCategory === category
-                  ? 'border border-orange-500 bg-orange-50 text-orange-700'
-                  : 'bg-white/60 text-gray-600 hover:bg-white'
-              }`}
-            >
-              {category}
             </button>
           ))}
         </section>
