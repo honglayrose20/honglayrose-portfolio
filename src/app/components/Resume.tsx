@@ -98,7 +98,6 @@ const references = [
 
 export function ResumePage() {
   const navigate = useNavigate();
-  const handlePrint = () => window.print();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -119,12 +118,14 @@ export function ResumePage() {
           <h2 className="text-base font-semibold text-gray-900">Resume</h2>
 
           <Button
-            onClick={handlePrint}
+            asChild
             size="sm"
             className="bg-orange-600 hover:bg-orange-700 text-white"
           >
-            <Download className="w-4 h-4 mr-2" />
-            Print / Save PDF
+            <a href="/Lim_Resume.pdf" download="Lim Resume.pdf">
+              <Download className="w-4 h-4 mr-2" />
+              Download PDF
+            </a>
           </Button>
         </div>
       </div>

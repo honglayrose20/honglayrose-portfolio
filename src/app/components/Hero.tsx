@@ -206,13 +206,14 @@ export function Hero() {
 
           <div className="bg-white rounded-3xl p-6 sm:p-8 flex min-h-64 flex-col justify-between">
             <h2 className="text-7xl sm:text-8xl font-bold leading-none tracking-tight text-gray-950">CV</h2>
-            <button
-              onClick={() => navigate('/resume')}
+            <a
+              href="/Lim_Resume.pdf"
+              download="Lim Resume.pdf"
               className="mt-8 w-full bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-6 py-4 text-base font-medium flex items-center justify-between transition-colors duration-200"
             >
               Download
               <Download className="w-6 h-6" />
-            </button>
+            </a>
           </div>
 
         </div>
