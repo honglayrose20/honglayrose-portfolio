@@ -33,6 +33,18 @@ export function Navigation() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const goHome = () => {
+    navigate('/');
+    window.requestAnimationFrame(() => {
+      const el = document.getElementById('home');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-12 bg-white/30 backdrop-blur-xl border-b border-white/20 shadow-sm"
@@ -43,7 +55,7 @@ export function Navigation() {
         {/* Mobile: back button (left) + name pill (right) */}
         <div className="flex md:hidden items-center gap-2">
           <button
-            onClick={() => navigate('/')}
+            onClick={goHome}
             className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 bg-white/60 hover:bg-white transition-colors duration-200"
             aria-label="Home"
           >
