@@ -134,7 +134,16 @@ export function BestFinds() {
 
               <div className="flex min-h-44 flex-col p-3 sm:min-h-64 sm:p-5">
                 <div className="mb-1.5 flex items-start justify-between gap-2 sm:mb-3">
-                  <h2 className="text-sm font-bold leading-tight text-gray-950 sm:text-xl">{find.name}</h2>
+                  <h2
+                    className="overflow-hidden text-sm font-bold leading-tight text-gray-950 sm:text-xl"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 2,
+                    }}
+                  >
+                    {find.name}
+                  </h2>
                 </div>
                 <div className="mb-2 flex flex-wrap gap-1.5 sm:mb-3">
                   <span className="rounded-full bg-orange-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-orange-700 sm:text-xs">
