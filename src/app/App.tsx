@@ -122,7 +122,7 @@ function Portfolio() {
           <Hero />
         </section>
 
-        <section className="animate-slide-up relative z-10">
+        <section id="experiences" className="animate-slide-up relative z-10">
           <SelectedWork />
         </section>
 

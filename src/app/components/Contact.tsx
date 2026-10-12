@@ -21,11 +21,11 @@ export function Contact() {
               <div className="flex flex-wrap items-center gap-3">
                 {/* Email pill */}
                 <a
-                  href="mailto:honglayrlim@gmail.com"
+                  href="mailto:limhonglayrose@gmail.com"
                   className="flex items-center gap-2 bg-white text-burgundy-600 rounded-full px-5 py-3 text-sm font-medium hover:bg-burgundy-50 transition-colors duration-200"
                 >
                   <Mail className="w-4 h-4" />
-                  honglayrlim@gmail.com
+                  limhonglayrose@gmail.com
                 </a>
 
                 {/* LinkedIn */}

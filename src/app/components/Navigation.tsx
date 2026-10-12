@@ -1,18 +1,23 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { Palette, FileText, Briefcase, Award, Mail } from 'lucide-react';
 
 const navItems = [
-  { id: 'home',           label: 'ABOUT' },
-  { id: 'certifications', label: 'CERTIFICATES' },
-  { id: 'contact',        label: 'CONTACT' },
+  { id: 'works', label: 'My Works', icon: Palette, path: '/design-works' },
+  { id: 'resume', label: 'Resume', icon: FileText, path: '/resume' },
+  { id: 'experiences', label: 'Experiences', icon: Briefcase },
+  { id: 'certifications', label: 'Certifications', icon: Award },
+  { id: 'contact', label: 'Contact Me', icon: Mail },
 ];
 
 export function Navigation() {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = 120;
-      for (const id of ['contact', 'certifications', 'home']) {
+      for (const id of ['contact', 'certifications', 'experiences', 'home']) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= offset) {
           setActiveSection(id);
@@ -27,7 +32,7 @@ export function Navigation() {
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
   };
 
   return (
@@ -56,18 +61,20 @@ export function Navigation() {
         </button>
 
         {/* Right — nav pills (desktop only) */}
-        <div className="hidden md:flex items-center gap-2">
-          {navItems.map(({ id, label }) => (
+        <div className="flex items-center gap-1 sm:gap-2">
+          {navItems.map(({ id, label, icon: Icon, path }) => (
             <button
               key={id}
-              onClick={() => scrollTo(id)}
-              className={`border rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
+              onClick={() => path ? navigate(path) : scrollTo(id)}
+              aria-label={label}
+              title={label}
+              className={`border rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 transition-colors duration-200 ${
                 activeSection === id
                   ? 'bg-burgundy-500 text-white border-burgundy-500'
                   : 'border-gray-300 text-gray-800 hover:bg-white'
               }`}
             >
-              {label}
+              <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           ))}
         </div>
