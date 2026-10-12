@@ -63,7 +63,7 @@ export function Navigation() {
               onClick={() => scrollTo(id)}
               className={`border rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
                 activeSection === id
-                  ? 'bg-orange-500 text-white border-orange-500'
+                  ? 'bg-burgundy-500 text-white border-burgundy-500'
                   : 'border-gray-300 text-gray-800 hover:bg-white'
               }`}
             >

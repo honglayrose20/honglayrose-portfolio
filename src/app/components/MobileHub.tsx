@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ArrowRight, Briefcase, Map, BookOpen, Star } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
-import profilePhoto from '../../imports/IMG_0981-1.jpeg';
+import profilePhoto from '../../imports/new-profile.jpeg';
 
 const tiles = [
   {
@@ -38,11 +38,7 @@ const tiles = [
     available: false,
   },
 ];
-interface MobileHubProps {
-  onEnter: () => void;
-}
-
-export function MobileHub({ onEnter }: MobileHubProps) {
+export function MobileHub() {
   const [pressed, setPressed] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -51,24 +47,22 @@ export function MobileHub({ onEnter }: MobileHubProps) {
     setPressed(tile.id);
     setTimeout(() => {
       if (tile.id === 'portfolio') {
-        navigate('/portfolio');
-        onEnter();
+        navigate('/');
       } else if (tile.id === 'finds') {
         navigate('/best-finds');
-      } else {
-        onEnter();
+
       }
     }, 300);
   };
 
   return (
-    <div className="md:hidden fixed inset-0 z-[100] bg-[#f0ece6] flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-[100] bg-[#f0ece6] flex flex-col overflow-hidden">
 
       {/* Top — profile */}
       <div
         className="relative flex-shrink-0 flex flex-col items-center justify-center pb-8 px-6"
         style={{
-          background: 'linear-gradient(165deg, #fed7aa 0%, #fbbf24 55%, #f97316 100%)',
+          background: 'linear-gradient(165deg, #fecaca 0%, #df3548 55%, #c8102e 100%)',
           paddingTop: 'max(calc(env(safe-area-inset-top) + 2rem), 5.5rem)',
           minHeight: '48%',
         }}
@@ -85,18 +79,18 @@ export function MobileHub({ onEnter }: MobileHubProps) {
               src={profilePhoto}
               alt="Honglay Rose Lim"
               className="w-full h-full object-cover"
-              style={{ objectPosition: '50% 10%' }}
+              style={{ objectPosition: '50% 10%', transform: 'scale(1.8)', transformOrigin: '60% 25%' }}
             />
           </div>
           <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-1">Welcome to my space</p>
           <h1 className="text-2xl font-bold text-white leading-tight">Honglay Rose Lim</h1>
           <p className="text-white/80 text-sm mt-1">UX Designer · Project Manager · Mobile Dev</p>
-          <a
-            href="https://honglayrose.com/portfolio"
+          <Link
+            to="/"
             className="mt-3 rounded-full bg-white/20 px-4 py-2 text-xs font-semibold text-white underline-offset-4 hover:underline"
           >
-            honglayrose.com/portfolio
-          </a>
+            honglayrose.com
+          </Link>
         </div>
       </div>
 
@@ -115,12 +109,12 @@ export function MobileHub({ onEnter }: MobileHubProps) {
                 onClick={() => handleTile(tile)}
                 className={`relative flex items-center gap-4 p-4 rounded-2xl text-left transition-all duration-200 active:scale-95 w-full ${
                   tile.primary
-                    ? `bg-orange-500 text-white shadow-lg shadow-orange-200 ${isActive ? 'scale-95 opacity-80' : 'hover:bg-orange-600'}`
+                    ? `bg-burgundy-500 text-white shadow-lg shadow-burgundy-200 ${isActive ? 'scale-95 opacity-80' : 'hover:bg-burgundy-600'}`
                     : 'bg-white border border-gray-100 text-gray-700 shadow-sm'
                 }`}
               >
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${tile.primary ? 'bg-white/20' : 'bg-orange-50'}`}>
-                  <Icon className={`w-5 h-5 ${tile.primary ? 'text-white' : 'text-orange-500'}`} />
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${tile.primary ? 'bg-white/20' : 'bg-burgundy-50'}`}>
+                  <Icon className={`w-5 h-5 ${tile.primary ? 'text-white' : 'text-burgundy-500'}`} />
                 </div>
 
                 <div className="flex-1 text-left">
@@ -129,8 +123,8 @@ export function MobileHub({ onEnter }: MobileHubProps) {
                 </div>
 
                 {tile.available ? (
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${tile.primary ? 'bg-white/20' : 'bg-orange-50'}`}>
-                    <ArrowRight className={`w-3.5 h-3.5 ${tile.primary ? 'text-white' : 'text-orange-500'}`} />
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${tile.primary ? 'bg-white/20' : 'bg-burgundy-50'}`}>
+                    <ArrowRight className={`w-3.5 h-3.5 ${tile.primary ? 'text-white' : 'text-burgundy-500'}`} />
                   </div>
                 ) : (
                   <span className="text-[10px] font-semibold uppercase tracking-wide text-gray-300 shrink-0">Coming soon</span>

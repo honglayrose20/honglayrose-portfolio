@@ -6,7 +6,7 @@ const experiences = [
     company: 'DRTIM LTD',
     period: 'January 2025 - Present',
     roles: ['UX Designer', 'Project Manager'],
-    gradient: 'from-orange-300 to-amber-200',
+    gradient: 'from-burgundy-300 to-burgundy-200',
     description: 'UK-based company where I design intuitive UI/UX experiences and manage projects bridging design and development teams.',
     achievements: [
       'Design intuitive UI/UX experiences and interactive prototypes for mobile and web features, translating business requirements and stakeholder feedback into developer-ready designs.',
@@ -22,7 +22,7 @@ const experiences = [
     company: 'Corewood Care LLC',
     period: 'March 2023 - May 2025',
     roles: ['UI/UX', 'Project Manager'],
-    gradient: 'from-amber-200 to-yellow-100',
+    gradient: 'from-burgundy-200 to-burgundy-100',
     description: 'Home care company focused on improving health management. I led design and project management for their digital products.',
     achievements: [
       'Led design system overhaul that improved user satisfaction by 40%.',
@@ -39,7 +39,7 @@ const experiences = [
     company: 'Creative Intelligence UK',
     period: 'March 2021 - Oct 2024',
     roles: ['UI/UX', 'Project Manager', 'Business Analyst'],
-    gradient: 'from-yellow-200 to-orange-100',
+    gradient: 'from-burgundy-200 to-burgundy-100',
     description: 'Swiftly identifies workflow challenges, offering tailored technical solutions to streamline and scale businesses.',
     achievements: [
       'Analyzed business processes for 15+ clients, identifying efficiency improvements.',
@@ -56,7 +56,7 @@ const experiences = [
     company: 'University of Science & Technology of Southern Ph.',
     period: 'July 2020 - January 2024',
     roles: ['Part-time Instructor'],
-    gradient: 'from-orange-200 to-amber-100',
+    gradient: 'from-burgundy-200 to-burgundy-100',
     description: 'State university in the Philippines. I taught UI/UX Design, Project Management, and Mobile Development as a part-time instructor.',
     achievements: [
       'Taught UI/UX Design, Project Management, and Mobile Development to 200+ students.',
@@ -73,7 +73,7 @@ const experiences = [
     company: 'Matrickz GmbH',
     period: 'February 2020 - March 2022',
     roles: ['Project Manager', 'CEO Assistant'],
-    gradient: 'from-amber-300 to-yellow-200',
+    gradient: 'from-burgundy-300 to-burgundy-200',
     description: 'Munich-based automotive software company specialised in embedded software development, testing, and integration.',
     achievements: [
       'Managed automotive software projects worth €2M+ budget.',
@@ -90,7 +90,7 @@ const experiences = [
     company: 'Mednefits Pte Ltd',
     period: 'June 2017 - May 2020',
     roles: ['Project Manager', 'Operation Manager'],
-    gradient: 'from-orange-100 to-yellow-50',
+    gradient: 'from-burgundy-100 to-burgundy-50',
     description: 'B2B employee medical benefits platform serving businesses across Asia with automated, affordable benefits management.',
     achievements: [
       'Scaled platform to serve 50,000+ employees across 200+ companies.',
@@ -107,7 +107,7 @@ const experiences = [
     company: 'Upcode Academy SG',
     period: 'August 2017 - May 2018',
     roles: ['Part-Time Graphic Designer'],
-    gradient: 'from-yellow-100 to-amber-50',
+    gradient: 'from-burgundy-100 to-burgundy-50',
     description: 'Designed banners, social media ads, event posters, company brochures, and logos for a coding bootcamp in Singapore.',
     achievements: [
       'Created 100+ marketing materials increasing engagement by 60%.',
@@ -124,7 +124,7 @@ const experiences = [
     company: 'Edufarm Learning Centre',
     period: 'November 2016 - April 2017',
     roles: ['Part-Time Graphic Designer'],
-    gradient: 'from-amber-100 to-orange-50',
+    gradient: 'from-burgundy-100 to-burgundy-50',
     description: 'Designed banners, social media ads, event posters, company brochures, and logos for a learning centre.',
     achievements: [
       'Redesigned learning centre branding increasing enrollment by 25%.',
@@ -173,11 +173,11 @@ export function SelectedWork() {
 
                 {/* Job title + mobile company/date */}
                 <span className="flex-1 min-w-0">
-                  <span className="block text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors duration-200">
+                  <span className="block text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-burgundy-500 transition-colors duration-200">
                     {exp.roles.join(' · ')}
                   </span>
                   <span className="mt-2 flex flex-wrap items-center gap-2 sm:hidden">
-                    <span className="text-xs bg-orange-50 text-orange-600 border border-orange-100 rounded-full px-2 py-0.5">
+                    <span className="text-xs bg-burgundy-50 text-burgundy-600 border border-burgundy-100 rounded-full px-2 py-0.5">
                       {exp.company}
                     </span>
                     <span className="text-xs text-gray-400">{exp.period}</span>
@@ -186,12 +186,12 @@ export function SelectedWork() {
 
                 {/* Company + period */}
                 <div className="hidden sm:flex flex-col items-end shrink-0 gap-1">
-                  <span className="text-xs bg-orange-50 text-orange-600 border border-orange-100 rounded-full px-2 py-0.5">{exp.company}</span>
+                  <span className="text-xs bg-burgundy-50 text-burgundy-600 border border-burgundy-100 rounded-full px-2 py-0.5">{exp.company}</span>
                   <span className="text-xs text-gray-400">{exp.period}</span>
                 </div>
 
                 {/* Expand toggle */}
-                <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-200">
+                <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-burgundy-500 group-hover:border-burgundy-500 transition-all duration-200">
                   {openIndex === i
                     ? <ChevronUp className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors duration-200" />
                     : <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors duration-200" />
@@ -207,11 +207,11 @@ export function SelectedWork() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Responsibilities */}
                     <div>
-                      <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-3">Responsibilities</h4>
+                      <h4 className="text-xs font-semibold uppercase tracking-widest text-burgundy-500 mb-3">Responsibilities</h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((a, ai) => (
                           <li key={ai} className="flex items-start gap-2 text-sm text-gray-700">
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0" />
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-burgundy-400 shrink-0" />
                             {a}
                           </li>
                         ))}
@@ -221,7 +221,7 @@ export function SelectedWork() {
                     {/* Projects + Tools */}
                     <div className="space-y-5">
                       <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-3">Notable Projects</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-burgundy-500 mb-3">Notable Projects</h4>
                         <div className="space-y-3">
                           {exp.projects.map((p) => (
                             <div key={p.name} className="bg-white border border-gray-100 rounded-xl p-3">
@@ -233,7 +233,7 @@ export function SelectedWork() {
                       </div>
 
                       <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-3">Tools & Technologies</h4>
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-burgundy-500 mb-3">Tools & Technologies</h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.technologies.map((t) => (
                             <span key={t} className="text-xs bg-white border border-gray-200 rounded-full px-3 py-1 text-gray-700">{t}</span>

@@ -1,9 +1,23 @@
+@theme {
+  --color-burgundy-50: #fff5f5;
+  --color-burgundy-100: #fee2e2;
+  --color-burgundy-200: #fecaca;
+  --color-burgundy-300: #fca5a5;
+  --color-burgundy-400: #ef6464;
+  --color-burgundy-500: #c8102e;
+  --color-burgundy-600: #ad0d26;
+  --color-burgundy-700: #8f0b20;
+  --color-burgundy-800: #72091a;
+  --color-burgundy-900: #570714;
+  --color-burgundy-950: #36040c;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
   
-  /* Clean color palette with orange/yellow theme */
+  /* Deep vivid red color palette */
   --background: #ffffff;
   --foreground: #1a1a1a;
   --card: #ffffff;
@@ -11,17 +25,17 @@
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
   
-  /* Orange/Yellow primary colors */
-  --primary: #ea580c;
+  /* Deep red primary colors */
+  --primary: #c8102e;
   --primary-foreground: #ffffff;
-  --secondary: #fef3c7;
-  --secondary-foreground: #92400e;
+  --secondary: #fee2e2;
+  --secondary-foreground: #8f0b20;
   
   /* Neutral grays */
   --muted: #f9fafb;
   --muted-foreground: #6b7280;
-  --accent: #fff7ed;
-  --accent-foreground: #ea580c;
+  --accent: #fff5f5;
+  --accent-foreground: #c8102e;
   
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
@@ -39,10 +53,10 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   
-  --ring: #ea580c;
-  --chart-1: #ea580c;
-  --chart-2: #f59e0b;
-  --chart-3: #eab308;
+  --ring: #c8102e;
+  --chart-1: #c8102e;
+  --chart-2: #df3548;
+  --chart-3: #ef6464;
   --chart-4: #84cc16;
   --chart-5: #10b981;
   
@@ -51,12 +65,12 @@
   
   --sidebar: #ffffff;
   --sidebar-foreground: #1a1a1a;
-  --sidebar-primary: #ea580c;
+  --sidebar-primary: #c8102e;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fff7ed;
-  --sidebar-accent-foreground: #ea580c;
+  --sidebar-accent: #fff5f5;
+  --sidebar-accent-foreground: #c8102e;
   --sidebar-border: #e5e7eb;
-  --sidebar-ring: #ea580c;
+  --sidebar-ring: #c8102e;
 }
 
 .dark {
@@ -182,19 +196,19 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--primary), #f59e0b);
+    background: linear-gradient(135deg, var(--primary), #df3548);
     border-radius: 4px;
     transition: background 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #f59e0b, var(--primary));
+    background: linear-gradient(135deg, #df3548, var(--primary));
   }
   } /* end desktop scrollbar media query */
 
   /* Enhanced selection styling */
   ::selection {
-    background: rgba(234, 88, 12, 0.2);
+    background: rgba(200, 16, 46, 0.2);
     color: var(--foreground);
   }
 }
@@ -293,25 +307,25 @@
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #ea580c 0%, #f59e0b 70%, #eab308 100%);
+    background: linear-gradient(135deg, #c8102e 0%, #df3548 70%, #ef6464 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .text-gradient-subtle {
-    background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%);
+    background: linear-gradient(135deg, #df3548 0%, #ef6464 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+    background: linear-gradient(135deg, #c8102e 0%, #df3548 100%);
   }
   
   .bg-gradient-subtle {
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.05) 0%, rgba(245, 158, 11, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.05) 0%, rgba(223, 53, 72, 0.08) 100%);
   }
   
   .glass-effect {
@@ -328,15 +342,15 @@
   
   .card-glow {
     @apply shadow-lg hover:shadow-2xl transition-all duration-300;
-    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.1);
+    box-shadow: 0 10px 25px rgba(200, 16, 46, 0.1);
   }
   
   .card-glow:hover {
-    box-shadow: 0 20px 40px rgba(234, 88, 12, 0.15);
+    box-shadow: 0 20px 40px rgba(200, 16, 46, 0.15);
   }
   
   .btn-primary-enhanced {
-    @apply bg-gradient-to-r from-primary to-orange-500 hover:from-orange-500 hover:to-primary text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply bg-gradient-to-r from-primary to-burgundy-500 hover:from-burgundy-500 hover:to-primary text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .text-balance {
@@ -434,10 +448,10 @@ html {
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 20px rgba(234, 88, 12, 0.2);
+    box-shadow: 0 0 20px rgba(200, 16, 46, 0.2);
   }
   to {
-    box-shadow: 0 0 30px rgba(234, 88, 12, 0.4);
+    box-shadow: 0 0 30px rgba(200, 16, 46, 0.4);
   }
 }
 

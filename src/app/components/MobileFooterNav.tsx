@@ -32,7 +32,7 @@ export function MobileFooterNav() {
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-orange-100 shadow-[0_-4px_20px_rgba(234,88,12,0.08)]">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-burgundy-100 shadow-[0_-4px_20px_rgba(128, 0, 32,0.08)]">
       <div className="flex items-stretch">
         {navItems.map(({ id, label, icon: Icon }) => {
           const isActive = active === id;
@@ -43,14 +43,14 @@ export function MobileFooterNav() {
               className="flex-1 flex flex-col items-center justify-center gap-1 py-2.5 relative transition-colors duration-200"
             >
               {isActive && (
-                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full bg-orange-500" />
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full bg-burgundy-500" />
               )}
               <Icon
-                className={`w-5 h-5 transition-colors duration-200 ${isActive ? 'text-orange-500' : 'text-gray-400'}`}
+                className={`w-5 h-5 transition-colors duration-200 ${isActive ? 'text-burgundy-500' : 'text-gray-400'}`}
                 strokeWidth={isActive ? 2.2 : 1.8}
               />
               <span
-                className={`text-[10px] font-medium leading-none transition-colors duration-200 ${isActive ? 'text-orange-500' : 'text-gray-400'}`}
+                className={`text-[10px] font-medium leading-none transition-colors duration-200 ${isActive ? 'text-burgundy-500' : 'text-gray-400'}`}
               >
                 {label}
               </span>

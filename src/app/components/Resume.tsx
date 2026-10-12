@@ -109,7 +109,7 @@ export function ResumePage() {
             variant="outline"
             size="sm"
             onClick={() => navigate('/')}
-            className="border-orange-200 text-orange-600 hover:bg-orange-50"
+            className="border-burgundy-200 text-burgundy-600 hover:bg-burgundy-50"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
@@ -120,7 +120,7 @@ export function ResumePage() {
           <Button
             asChild
             size="sm"
-            className="bg-orange-600 hover:bg-orange-700 text-white"
+            className="bg-burgundy-600 hover:bg-burgundy-700 text-white"
           >
             <a href="/Lim_Resume.pdf" download="Lim Resume.pdf">
               <Download className="w-4 h-4 mr-2" />
@@ -170,7 +170,7 @@ export function ResumePage() {
               {workExperience.map((exp, i) => (
                 <div key={i}>
                   <p className="text-xs text-gray-500">{exp.company} | {exp.period}</p>
-                  <p className="text-sm font-bold text-orange-500 uppercase tracking-wide mb-1">{exp.role}</p>
+                  <p className="text-sm font-bold text-burgundy-500 uppercase tracking-wide mb-1">{exp.role}</p>
                   <ul className="space-y-1">
                     {exp.bullets.map((b, j) => (
                       <li key={j} className="text-sm text-gray-900 flex items-start gap-2">
@@ -191,7 +191,7 @@ export function ResumePage() {
                 <ul className="space-y-1 text-sm text-gray-900">
                   {skills.map((s, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-burgundy-400 flex-shrink-0" />
                       {s}
                     </li>
                   ))}
@@ -201,15 +201,15 @@ export function ResumePage() {
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest text-gray-900 border-b border-gray-200 pb-1 mb-3">Education</h3>
                 <p className="text-xs text-gray-500 mb-1">University of Science and Technology of Southern Philippines</p>
-                <p className="text-sm font-semibold text-orange-500">Bachelor of Science in Electro-Mechanical Technology</p>
+                <p className="text-sm font-semibold text-burgundy-500">Bachelor of Science in Electro-Mechanical Technology</p>
                 <p className="text-xs text-gray-500 mt-1">2012–2017</p>
               </div>
 
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest text-gray-900 border-b border-gray-200 pb-1 mb-3">Language</h3>
                 <ul className="space-y-1 text-sm text-gray-900">
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />English</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />Filipino</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-burgundy-400 flex-shrink-0" />English</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-burgundy-400 flex-shrink-0" />Filipino</li>
                 </ul>
               </div>
 

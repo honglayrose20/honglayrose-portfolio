@@ -210,8 +210,8 @@ export function Experience() {
         {/* Header Section */}
         <div className="mb-10">
           <div className="flex items-center mb-4">
-            <div className="w-2 h-2 bg-orange-600 rounded-full mr-3"></div>
-            <span className="text-orange-600 font-medium">Experiences</span>
+            <div className="w-2 h-2 bg-burgundy-600 rounded-full mr-3"></div>
+            <span className="text-burgundy-600 font-medium">Experiences</span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
             Work Experience
@@ -237,7 +237,7 @@ export function Experience() {
                   <div className="lg:col-span-3">
                     <h3 className="font-bold text-gray-900 text-lg mb-2">{exp.company}</h3>
                     <p className="text-gray-900 text-sm flex items-center">
-                      <span className="w-1 h-1 bg-orange-400 rounded-full mr-2"></span>
+                      <span className="w-1 h-1 bg-burgundy-400 rounded-full mr-2"></span>
                       {exp.period}
                     </p>
                   </div>
@@ -253,7 +253,7 @@ export function Experience() {
                       {exp.roles.map((role, roleIndex) => (
                         <span 
                           key={roleIndex}
-                          className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-burgundy-100 text-burgundy-700 text-xs rounded-full font-medium"
                         >
                           {role}
                         </span>
@@ -261,7 +261,7 @@ export function Experience() {
                     </div>
                     
                     <div className="ml-4">
-                      <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
+                      <div className="w-8 h-8 bg-burgundy-600 rounded-full flex items-center justify-center hover:bg-burgundy-700 transition-colors">
                         {expandedIndex === index ? (
                           <ChevronUp className="w-4 h-4 text-white" />
                         ) : (
@@ -275,7 +275,7 @@ export function Experience() {
 
               {/* Expanded Content */}
               {expandedIndex === index && (
-                <div className="border-t border-orange-200 p-6 bg-white animate-in slide-in-from-top-2 duration-300">
+                <div className="border-t border-burgundy-200 p-6 bg-white animate-in slide-in-from-top-2 duration-300">
                   <div className="grid lg:grid-cols-2 gap-8">
                     {/* Left Column - Details */}
                     <div className="space-y-6">
@@ -285,7 +285,7 @@ export function Experience() {
                         <ul className="space-y-2">
                           {exp.expandedContent.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="text-gray-900 text-sm flex items-start">
-                              <span className="w-1.5 h-1.5 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span className="w-1.5 h-1.5 bg-burgundy-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                               {achievement}
                             </li>
                           ))}
@@ -299,7 +299,7 @@ export function Experience() {
                           {exp.expandedContent.technologies.map((tech, techIndex) => (
                             <span 
                               key={techIndex}
-                              className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded font-medium"
+                              className="px-2 py-1 bg-burgundy-100 text-burgundy-700 text-xs rounded font-medium"
                             >
                               {tech}
                             </span>
@@ -313,7 +313,7 @@ export function Experience() {
                       <h4 className="font-semibold text-gray-900 mb-3">Notable Projects</h4>
                       <div className="space-y-4">
                         {exp.expandedContent.projects.map((project, projIndex) => (
-                          <div key={projIndex} className="bg-white rounded-lg p-4 shadow-sm border border-orange-100">
+                          <div key={projIndex} className="bg-white rounded-lg p-4 shadow-sm border border-burgundy-100">
                             <div>
                               <h5 className="font-medium text-gray-900 mb-1">{project.name}</h5>
                               <p className="text-gray-900 text-sm leading-relaxed">

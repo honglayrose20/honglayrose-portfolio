@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useRef, useState } from 'react';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
-import profilePhoto from '../../imports/IMG_0981-1.jpeg';
+import profilePhoto from '../../imports/new-profile.jpeg';
 import introAudio from '../../imports/copy_AB75B2BB-79F8-4B19-927F-A780DFBA3B70.mp3';
 import { ArrowUpRight, ChevronDown, ChevronUp, Download } from 'lucide-react';
 
@@ -56,18 +56,18 @@ export function Hero() {
             className="shimmer-card md:row-span-2 rounded-3xl overflow-hidden flex flex-col justify-end relative p-6"
             style={{
               backgroundImage: [
-                'linear-gradient(145deg, #fed7aa 0%, #fbbf24 55%, #f97316 100%)',
+                'linear-gradient(145deg, #fecaca 0%, #df3548 55%, #c8102e 100%)',
                 'radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)',
               ].join(', '),
               backgroundSize: 'cover, 22px 22px',
             }}
           >
-            <div className="mb-4">
+            <div className="mb-4 w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <ImageWithFallback
                 src={profilePhoto}
                 alt="Honglay Rose Lim"
-                className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl"
-                style={{ objectPosition: '50% 10%' }}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '50% 10%', transform: 'scale(1.8)', transformOrigin: '60% 25%' }}
               />
             </div>
             <p className="text-xs font-semibold uppercase tracking-widest text-white/80 mb-2">
@@ -94,10 +94,10 @@ export function Hero() {
           <div className="flex gap-4 md:contents">
 
           {/* ── Card 3: Audio intro ── */}
-          <div className="flex-1 bg-orange-500 rounded-3xl p-6 flex flex-col justify-between">
+          <div className="flex-1 bg-burgundy-500 rounded-3xl p-6 flex flex-col justify-between">
             <div>
               <h3 className="text-white font-bold text-xl leading-snug">Designing and Managing for Calm</h3>
-              <p className="text-orange-100 text-sm mt-1">Listen to my introduction</p>
+              <p className="text-burgundy-100 text-sm mt-1">Listen to my introduction</p>
             </div>
 
             {/* Animated waveform — faster when playing */}
@@ -135,12 +135,12 @@ export function Hero() {
             >
               {playing ? (
                 /* Pause icon */
-                <svg viewBox="0 0 24 24" className="w-5 h-5 text-orange-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-burgundy-500 fill-current" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                 </svg>
               ) : (
                 /* Play icon */
-                <svg viewBox="0 0 24 24" className="w-5 h-5 text-orange-500 fill-current ml-0.5" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-burgundy-500 fill-current ml-0.5" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               )}
@@ -170,7 +170,7 @@ export function Hero() {
 
             <button
               onClick={() => navigate('/design-works')}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-5 py-3 text-sm font-medium flex items-center justify-between transition-colors duration-200"
+              className="w-full bg-burgundy-500 hover:bg-burgundy-600 text-white rounded-2xl px-5 py-3 text-sm font-medium flex items-center justify-between transition-colors duration-200"
             >
               View My Work
               <ArrowUpRight className="w-4 h-4" />
@@ -186,7 +186,7 @@ export function Hero() {
               {expertise.map((skill) => (
                 <span
                   key={skill}
-                  className="border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-800 bg-[#f7f7f5] hover:border-orange-300 hover:text-orange-600 transition-colors duration-200 cursor-default"
+                  className="border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-800 bg-[#f7f7f5] hover:border-burgundy-300 hover:text-burgundy-600 transition-colors duration-200 cursor-default"
                 >
                   {skill}
                 </span>
@@ -194,7 +194,7 @@ export function Hero() {
             </div>
             <button
               onClick={() => setShowAllSkills((v) => !v)}
-              className="mt-3 flex items-center gap-1 text-xs font-semibold text-orange-500 hover:text-orange-600 transition-colors duration-200"
+              className="mt-3 flex items-center gap-1 text-xs font-semibold text-burgundy-500 hover:text-burgundy-600 transition-colors duration-200"
             >
               {showAllSkills ? (
                 <><ChevronUp className="w-3.5 h-3.5" /> Show less</>
@@ -206,10 +206,17 @@ export function Hero() {
 
           <div className="bg-white rounded-3xl p-6 sm:p-8 flex min-h-64 flex-col justify-between">
             <h2 className="text-7xl sm:text-8xl font-bold leading-none tracking-tight text-gray-950">CV</h2>
+            <Link
+              to="/resume"
+              className="mt-8 w-full border border-burgundy-500 text-burgundy-600 hover:bg-burgundy-50 rounded-2xl px-6 py-4 text-base font-medium flex items-center justify-between transition-colors duration-200"
+            >
+              View Resume
+              <ArrowUpRight className="w-6 h-6" />
+            </Link>
             <a
               href="/Lim_Resume.pdf"
               download="Lim Resume.pdf"
-              className="mt-8 w-full bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-6 py-4 text-base font-medium flex items-center justify-between transition-colors duration-200"
+              className="mt-3 w-full bg-burgundy-500 hover:bg-burgundy-600 text-white rounded-2xl px-6 py-4 text-base font-medium flex items-center justify-between transition-colors duration-200"
             >
               Download
               <Download className="w-6 h-6" />

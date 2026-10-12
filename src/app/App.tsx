@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -17,13 +17,28 @@ import { Toaster } from './components/ui/sonner';
 import { Button } from './components/ui/button';
 import { Mail, ArrowLeft, ChevronUp } from 'lucide-react';
 
+function ScrollToTopOnNavigation() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    const previousRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    return () => {
+      window.history.scrollRestoration = previousRestoration;
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.key]);
+
+  return null;
+}
+
 function Portfolio() {
   const [showSubmissions, setShowSubmissions] = useState(false);
-  const [hubDismissed, setHubDismissed] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showAdminButton, setShowAdminButton] = useState(false);
-  const location = useLocation();
-  const showMobileHub = location.pathname === '/' && !hubDismissed;
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 500);
@@ -72,7 +87,6 @@ function Portfolio() {
 
   return (
     <div className="min-h-screen bg-white antialiased overflow-x-hidden">
-      {showMobileHub && <MobileHub onEnter={() => setHubDismissed(true)} />}
       <AnimatedBackground />
 
       <Navigation />
@@ -135,9 +149,11 @@ function Portfolio() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTopOnNavigation />
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/personal" element={<MobileHub />} />
         <Route path="/design-works" element={<DesignWorks />} />
         <Route path="/best-finds" element={<BestFinds />} />
         <Route path="/resume" element={<ResumePage />} />

@@ -26,7 +26,7 @@ const finds: Find[] = [
     description: 'A paper-light white e-ink reader with a minimalist design, clear display, local warranty, and free shipping.',
     image: 'https://down-th.img.susercontent.com/file/th-11134208-7ras8-ma3yh7ahzgww38',
     link: 'https://s.shopee.ph/4fwOEM4vhx',
-    accent: 'from-stone-100 via-white to-orange-50',
+    accent: 'from-stone-100 via-white to-burgundy-50',
   },
   {
     name: 'Murmole BOOX Go 7 Quote Cover',
@@ -35,7 +35,7 @@ const finds: Find[] = [
     description: 'A slim magnetic detachable folio cover with an acrylic shell for BOOX Go 7, Go Color 7, Leaf 3, and Leaf 3C devices.',
     image: bestFindBooxCover,
     link: 'https://s.shopee.ph/9V1eKRelfY',
-    accent: 'from-stone-100 via-white to-amber-50',
+    accent: 'from-stone-100 via-white to-burgundy-50',
   },
   {
     name: 'Love Soteria Magnetic Bookish Griptok',
@@ -55,6 +55,15 @@ const finds: Find[] = [
     link: 'https://s.shopee.ph/60RmB8grfH',
     accent: 'from-rose-100 via-white to-sky-50',
   },
+  {
+    name: 'Yoole Hair Dryer S',
+    category: 'Beauty',
+    marketplace: 'Shopee',
+    description: 'A lightweight high-speed hair dryer with 200M negative ions, 110,000 RPM airflow, low noise, and fast salon-style drying.',
+    image: 'https://down-id.img.susercontent.com/file/id-11134207-81ztc-mdyhpudm82dea6',
+    link: 'https://s.shopee.ph/5q8NHCK7sR',
+    accent: 'from-violet-100 via-white to-rose-50',
+  },
 ];
 
 const marketplaces: Array<'All' | Marketplace> = ['All', 'Shopee'];
@@ -69,13 +78,13 @@ export function BestFinds() {
 
   return (
     <div className="min-h-screen bg-[#f8f0e7] text-gray-900">
-      <div className="sticky top-0 z-50 border-b border-orange-100/80 bg-[#fffaf5]/90 backdrop-blur-xl">
+      <div className="sticky top-0 z-50 border-b border-burgundy-100/80 bg-[#fffaf5]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Button
             variant="outline"
             size="sm"
-            onClick={() => navigate('/')}
-            className="h-9 rounded-full border-orange-200 bg-white/80 text-orange-600 hover:bg-orange-50"
+            onClick={() => navigate('/personal')}
+            className="h-9 rounded-full border-burgundy-200 bg-white/80 text-burgundy-600 hover:bg-burgundy-50"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Portfolio
@@ -92,7 +101,7 @@ export function BestFinds() {
       <main className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
         <section className="relative overflow-hidden pb-7 pt-10 sm:pb-10 sm:pt-16">
           <div className="relative z-10 max-w-xl">
-            <p className="mb-1 font-serif text-3xl italic text-orange-700/80">My</p>
+            <p className="mb-1 font-serif text-3xl italic text-burgundy-700/80">My</p>
             <h1 className="text-5xl font-bold leading-none tracking-tight text-gray-950 sm:text-7xl">
               Best Finds
             </h1>
@@ -101,10 +110,10 @@ export function BestFinds() {
               From Shopee, Lazada, and TikTok Shop.
             </p>
           </div>
-          <div className="pointer-events-none absolute -right-24 top-10 hidden h-44 w-64 rotate-[-12deg] rounded-[45%] bg-orange-200/40 sm:block" />
+          <div className="pointer-events-none absolute -right-24 top-10 hidden h-44 w-64 rotate-[-12deg] rounded-[45%] bg-burgundy-200/40 sm:block" />
         </section>
 
-        <section aria-label="Filter by marketplace" className="mb-7 flex gap-2 overflow-x-auto border-b border-orange-100 pb-3">
+        <section aria-label="Filter by marketplace" className="mb-7 flex gap-2 overflow-x-auto border-b border-burgundy-100 pb-3">
           {marketplaces.map((marketplace) => (
             <button
               key={marketplace}
@@ -112,8 +121,8 @@ export function BestFinds() {
               onClick={() => setActiveMarketplace(marketplace)}
               className={`flex shrink-0 items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors ${
                 activeMarketplace === marketplace
-                  ? 'border-orange-500 bg-orange-500 text-white shadow-sm'
-                  : 'border-transparent bg-white/80 text-gray-700 hover:border-orange-200 hover:text-orange-600'
+                  ? 'border-burgundy-500 bg-burgundy-500 text-white shadow-sm'
+                  : 'border-transparent bg-white/80 text-gray-700 hover:border-burgundy-200 hover:text-burgundy-600'
               }`}
             >
               {marketplace}
@@ -123,12 +132,12 @@ export function BestFinds() {
 
         <section className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3" aria-label="Best finds">
           {visibleFinds.map((find) => (
-            <article key={find.name} className="overflow-hidden rounded-2xl border border-orange-100/80 bg-[#fffdf9] shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg sm:rounded-3xl">
+            <article key={find.name} className="overflow-hidden rounded-2xl border border-burgundy-100/80 bg-[#fffdf9] shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg sm:rounded-3xl">
               <div className={`relative flex aspect-[1.15] items-center justify-center bg-gradient-to-br ${find.accent}`}>
                 {find.image ? (
                   <img src={find.image} alt={find.name} className="h-full w-full object-cover" />
                 ) : (
-                  <Package className="h-12 w-12 text-orange-500/50 sm:h-16 sm:w-16" strokeWidth={1.2} />
+                  <Package className="h-12 w-12 text-burgundy-500/50 sm:h-16 sm:w-16" strokeWidth={1.2} />
                 )}
               </div>
 
@@ -146,7 +155,7 @@ export function BestFinds() {
                   </h2>
                 </div>
                 <div className="mb-2 flex flex-wrap gap-1.5 sm:mb-3">
-                  <span className="rounded-full bg-orange-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-orange-700 sm:text-xs">
+                  <span className="rounded-full bg-burgundy-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-burgundy-700 sm:text-xs">
                     {find.marketplace}
                   </span>
                   <span className="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-gray-600 sm:text-xs">
@@ -167,7 +176,7 @@ export function BestFinds() {
                   <Button
                     asChild
                     size="sm"
-                    className="h-9 w-full rounded-full bg-orange-500 text-xs font-semibold text-white shadow-sm hover:bg-orange-600 sm:h-10 sm:text-sm"
+                    className="h-9 w-full rounded-full bg-burgundy-500 text-xs font-semibold text-white shadow-sm hover:bg-burgundy-600 sm:h-10 sm:text-sm"
                   >
                     <a href={find.link} target="_blank" rel="noreferrer">
                       Buy on Shopee
@@ -180,20 +189,20 @@ export function BestFinds() {
           ))}
         </section>
 
-        <section className="mt-16 rounded-3xl bg-orange-500 px-6 py-10 text-white sm:px-10">
+        <section className="mt-16 rounded-3xl bg-burgundy-500 px-6 py-10 text-white sm:px-10">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-orange-100">A personal list</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-burgundy-100">A personal list</p>
               <h2 className="text-2xl font-bold sm:text-3xl">Only things worth sharing.</h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-orange-100">
+            <p className="max-w-sm text-sm leading-relaxed text-burgundy-100">
               Product links and prices will be added as each find is tested and ready to recommend.
             </p>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-orange-100 px-4 py-8 text-center text-sm text-gray-500 sm:px-6">
+      <footer className="border-t border-burgundy-100 px-4 py-8 text-center text-sm text-gray-500 sm:px-6">
         © {new Date().getFullYear()} Honglay Rose Lim. All rights reserved.
       </footer>
     </div>

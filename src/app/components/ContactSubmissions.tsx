@@ -104,10 +104,10 @@ export function ContactSubmissions() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-burgundy-50 via-white to-burgundy-50 py-12">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center">
-            <RefreshCw className="w-8 h-8 mx-auto mb-4 text-orange-600 animate-spin" />
+            <RefreshCw className="w-8 h-8 mx-auto mb-4 text-burgundy-600 animate-spin" />
             <p className="text-gray-600">Loading contact submissions...</p>
           </div>
         </div>
@@ -117,7 +117,7 @@ export function ContactSubmissions() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-burgundy-50 via-white to-burgundy-50 py-12">
         <div className="container mx-auto px-6 max-w-4xl">
           <Card className="border-red-200 bg-red-50">
             <CardContent className="p-6 text-center">
@@ -134,7 +134,7 @@ export function ContactSubmissions() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-burgundy-50 via-white to-burgundy-50 py-12">
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
@@ -224,7 +224,7 @@ export function ContactSubmissions() {
                     <div className="flex gap-3">
                       <Button 
                         onClick={() => handleEmailReply(submission.email || '', submission.subject || 'No Subject')}
-                        className="bg-orange-600 hover:bg-orange-700"
+                        className="bg-burgundy-600 hover:bg-burgundy-700"
                         disabled={!submission.email}
                       >
                         <Mail className="w-4 h-4 mr-2" />

@@ -6,12 +6,12 @@ export function Contact() {
   return (
     <section id="contact" className="bg-[#f0ece6] px-4 sm:px-6 py-6 pb-20 md:pb-6">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-orange-500 rounded-3xl overflow-hidden">
+        <div className="bg-burgundy-500 rounded-3xl overflow-hidden">
 
           {/* Main content */}
           <div className="px-8 pt-12 pb-10 sm:px-12">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-orange-200 mb-6">Contact</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-burgundy-200 mb-6">Contact</p>
 
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-10 max-w-2xl">
                 Let's make something people love to use.
@@ -22,7 +22,7 @@ export function Contact() {
                 {/* Email pill */}
                 <a
                   href="mailto:honglayrlim@gmail.com"
-                  className="flex items-center gap-2 bg-white text-orange-600 rounded-full px-5 py-3 text-sm font-medium hover:bg-orange-50 transition-colors duration-200"
+                  className="flex items-center gap-2 bg-white text-burgundy-600 rounded-full px-5 py-3 text-sm font-medium hover:bg-burgundy-50 transition-colors duration-200"
                 >
                   <Mail className="w-4 h-4" />
                   honglayrlim@gmail.com
@@ -56,12 +56,12 @@ export function Contact() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-white/20 px-8 sm:px-12 py-5 flex items-center justify-between text-xs text-orange-100">
+          <div className="border-t border-white/20 px-8 sm:px-12 py-5 flex items-center justify-between text-xs text-burgundy-100">
             <span>© {new Date().getFullYear()} Honglay Rose Lim. All rights reserved.</span>
             <span className="hidden sm:block">Philippines · Available Worldwide</span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-orange-200 hover:text-white transition-colors duration-200"
+              className="flex items-center gap-1.5 text-burgundy-200 hover:text-white transition-colors duration-200"
             >
               Back to top <ArrowUp className="w-3 h-3" />
             </button>

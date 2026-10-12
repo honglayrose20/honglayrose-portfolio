@@ -51,7 +51,7 @@ export function About() {
               <ul className="space-y-2">
                 {highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-burgundy-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-900 text-sm">{highlight}</span>
                   </li>
                 ))}
@@ -62,7 +62,7 @@ export function About() {
               <h4 className="font-semibold text-gray-900 mb-4">Core Skills</h4>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs bg-orange-100 text-orange-700 hover:bg-orange-200">
+                  <Badge key={index} variant="secondary" className="text-xs bg-burgundy-100 text-burgundy-700 hover:bg-burgundy-200">
                     {skill}
                   </Badge>
                 ))}
@@ -72,7 +72,7 @@ export function About() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
                 onClick={() => window.open('https://calendly.com/limhonglayrose/initial-interview', '_blank')}
-                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium cursor-pointer"
+                className="bg-burgundy-600 hover:bg-burgundy-700 text-white px-6 py-3 rounded-lg font-medium cursor-pointer"
               >
                 Book a Call
                 <ArrowUpRight className="w-4 h-4 ml-2" />
@@ -85,7 +85,7 @@ export function About() {
                   }
                 }}
                 variant="outline"
-                className="border-orange-600 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-medium cursor-pointer"
+                className="border-burgundy-600 text-burgundy-600 hover:bg-burgundy-50 px-6 py-3 rounded-lg font-medium cursor-pointer"
               >
                 Contact Me
                 <Mail className="w-4 h-4 ml-2" />

@@ -1,16 +1,22 @@
 import { ArrowLeft, ExternalLink, Figma } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { Button } from './ui/button';
+import patientPortalDashboard from '../../imports/patient-portal-dashboard.png';
+import patientPortalLanding from '../../imports/patient-portal-landing.jpg';
 
 const projects = [
   {
     title: 'Patient Portal Redesign',
+    images: [
+      { src: patientPortalDashboard, alt: 'RecruitWrite AI dashboard design' },
+      { src: patientPortalLanding, alt: 'RecruitWrite AI landing page design' },
+    ],
     category: 'UI/UX Design',
     company: 'Corewood Care LLC',
     description: 'Complete redesign of a patient portal focused on accessibility and ease of use for home care clients and coordinators.',
     tags: ['Figma', 'User Research', 'Prototyping', 'Healthcare'],
-    color: 'from-orange-100 to-yellow-50',
-    accent: 'bg-orange-500',
+    color: 'from-burgundy-100 to-burgundy-50',
+    accent: 'bg-burgundy-500',
   },
   {
     title: 'Care Management Dashboard',
@@ -18,8 +24,8 @@ const projects = [
     company: 'Corewood Care LLC',
     description: 'An administrative dashboard for care coordinators to manage patient cases, schedules, and team assignments.',
     tags: ['Figma', 'Dashboard', 'Data Visualization', 'Agile'],
-    color: 'from-yellow-100 to-orange-50',
-    accent: 'bg-yellow-500',
+    color: 'from-burgundy-100 to-burgundy-50',
+    accent: 'bg-burgundy-500',
   },
   {
     title: 'Mobile & Web Feature Design',
@@ -27,8 +33,8 @@ const projects = [
     company: 'DRTIM LTD',
     description: 'End-to-end UI/UX design for mobile and web features — from wireframes to interactive, developer-ready prototypes.',
     tags: ['Figma', 'Mobile', 'Web', 'Prototyping'],
-    color: 'from-orange-50 to-yellow-100',
-    accent: 'bg-orange-600',
+    color: 'from-burgundy-50 to-burgundy-100',
+    accent: 'bg-burgundy-600',
   },
   {
     title: 'Workflow Automation Platform',
@@ -36,8 +42,8 @@ const projects = [
     company: 'Creative Intelligence UK',
     description: 'Enterprise solution for automating business processes across multiple departments, reducing manual workload by 35%.',
     tags: ['UI/UX', 'Business Analysis', 'Agile', 'Enterprise'],
-    color: 'from-yellow-50 to-orange-100',
-    accent: 'bg-yellow-600',
+    color: 'from-burgundy-50 to-burgundy-100',
+    accent: 'bg-burgundy-600',
   },
   {
     title: 'App Project Management',
@@ -45,8 +51,8 @@ const projects = [
     company: 'Dailypress Pty Ltd',
     description: 'Forecasted and tracked progress for 16 simultaneous app projects through weekly management reports and stakeholder updates.',
     tags: ['Scrum', 'Kanban', 'Reporting', 'Mobile Apps'],
-    color: 'from-orange-100 to-yellow-50',
-    accent: 'bg-orange-500',
+    color: 'from-burgundy-100 to-burgundy-50',
+    accent: 'bg-burgundy-500',
   },
   {
     title: 'Benefits Management Platform',
@@ -54,8 +60,8 @@ const projects = [
     company: 'Mednefits Pte Ltd',
     description: 'Employee-facing platform for managing medical benefits and claims, scaled to serve 50,000+ employees across 200+ companies.',
     tags: ['Product Design', 'B2B', 'Operations', 'Scaling'],
-    color: 'from-yellow-100 to-orange-50',
-    accent: 'bg-yellow-500',
+    color: 'from-burgundy-100 to-burgundy-50',
+    accent: 'bg-burgundy-500',
   },
 ];
 
@@ -71,7 +77,7 @@ export function DesignWorks() {
             variant="outline"
             size="sm"
             onClick={() => navigate('/')}
-            className="border-orange-200 text-orange-600 hover:bg-orange-50"
+            className="border-burgundy-200 text-burgundy-600 hover:bg-burgundy-50"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
@@ -81,9 +87,9 @@ export function DesignWorks() {
       </div>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-white py-20 px-6">
+      <div className="bg-gradient-to-br from-burgundy-50 via-burgundy-50 to-white py-20 px-6">
         <div className="container mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-burgundy-100 text-burgundy-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Figma className="w-4 h-4" />
             Design Portfolio
           </div>
@@ -100,7 +106,7 @@ export function DesignWorks() {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`rounded-2xl bg-gradient-to-br ${project.color} p-6 flex flex-col gap-4 border border-orange-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+              className={`rounded-2xl bg-gradient-to-br ${project.color} p-6 flex flex-col gap-4 border border-burgundy-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
             >
               {/* Category badge */}
               <div className="flex items-center justify-between">
@@ -110,6 +116,15 @@ export function DesignWorks() {
               </div>
 
               {/* Content */}
+              {project.images && (
+                <div className="grid grid-cols-2 gap-2">
+                  {project.images.map((image) => (
+                    <a key={image.src} href={image.src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-lg border border-burgundy-200 bg-white" aria-label={`View ${image.alt}`}>
+                      <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-36 object-cover object-top" />
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="flex-1">
                 <p className="text-xs text-gray-900 mb-1">{project.company}</p>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
@@ -117,7 +132,7 @@ export function DesignWorks() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 pt-2 border-t border-orange-100">
+              <div className="flex flex-wrap gap-2 pt-2 border-t border-burgundy-100">
                 {project.tags.map((tag, j) => (
                   <span key={j} className="text-xs text-gray-900 bg-white/70 px-2 py-1 rounded-md">
                     {tag}
@@ -129,11 +144,11 @@ export function DesignWorks() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 text-center bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl p-12 text-white">
+        <div className="mt-20 text-center bg-gradient-to-r from-burgundy-600 to-burgundy-600 rounded-2xl p-12 text-white">
           <h2 className="text-3xl font-bold mb-3">Want to see more?</h2>
-          <p className="text-orange-100 mb-8 text-lg">Book an interview session and I'll walk you through my full design process.</p>
+          <p className="text-burgundy-100 mb-8 text-lg">Book an interview session and I'll walk you through my full design process.</p>
           <Button
-            className="bg-white text-orange-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-xl"
+            className="bg-white text-burgundy-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-xl"
             onClick={() => window.open('https://calendly.com/limhonglayrose/initial-interview', '_blank')}
           >
             <ExternalLink className="w-4 h-4 mr-2" />

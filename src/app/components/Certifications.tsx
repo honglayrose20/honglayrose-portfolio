@@ -55,7 +55,7 @@ export function Certifications() {
         {/* Header */}
         <div className="flex items-end justify-between mb-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-2">Professional Development</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-burgundy-500 mb-2">Professional Development</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-none">Certifications</h2>
           </div>
           <span className="text-sm text-gray-400 hidden sm:block">{allCerts.length} certificates</span>
@@ -71,11 +71,11 @@ export function Certifications() {
               title={c.title}
               className="group flex flex-col gap-3 text-left"
             >
-              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 shadow-sm group-hover:shadow-lg group-hover:border-orange-200 group-hover:scale-[1.02] transition-all duration-200">
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 shadow-sm group-hover:shadow-lg group-hover:border-burgundy-200 group-hover:scale-[1.02] transition-all duration-200">
                 <ImageWithFallback src={c.image} alt={c.title} className="w-full h-full object-cover" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-800 leading-snug line-clamp-2 group-hover:text-orange-500 transition-colors duration-200">{c.title}</p>
+                <p className="text-sm font-medium text-gray-800 leading-snug line-clamp-2 group-hover:text-burgundy-500 transition-colors duration-200">{c.title}</p>
                 <p className="text-xs text-gray-400 mt-1">{c.issuer} · Coursera</p>
               </div>
             </button>

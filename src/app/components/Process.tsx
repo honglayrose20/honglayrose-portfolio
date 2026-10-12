@@ -36,7 +36,7 @@ export function Process() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-orange-50 to-yellow-50">
+    <section className="py-16 bg-gradient-to-br from-burgundy-50 to-burgundy-50">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Design Process</h2>
@@ -49,10 +49,10 @@ export function Process() {
           {designProcess.map((step, index) => {
             const Icon = step.icon;
             return (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-orange-100">
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-burgundy-100">
                 <CardHeader className="text-center pb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-6 h-6 text-orange-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-burgundy-100 to-burgundy-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-6 h-6 text-burgundy-600" />
                   </div>
                   <CardTitle className="text-lg">{step.title}</CardTitle>
                 </CardHeader>
