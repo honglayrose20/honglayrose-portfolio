@@ -1,18 +1,10 @@
 import { useState } from 'react';
-import { ArrowRight, Briefcase, Map, BookOpen, Star } from 'lucide-react';
+import { ArrowRight, Map, BookOpen, Star } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import profilePhoto from '../../imports/new-profile.jpeg';
 
 const tiles = [
-  {
-    id: 'portfolio',
-    label: 'My Work Portfolio',
-    sub: 'UX Design · PM · Mobile Dev',
-    icon: Briefcase,
-    primary: true,
-    available: true,
-  },
   {
     id: 'finds',
     label: 'Best Finds',
@@ -27,7 +19,7 @@ const tiles = [
     sub: 'Adventures & Places',
     icon: Map,
     primary: false,
-    available: false,
+    available: true,
   },
   {
     id: 'reads',
@@ -46,11 +38,10 @@ export function MobileHub() {
     if (!tile.available) return;
     setPressed(tile.id);
     setTimeout(() => {
-      if (tile.id === 'portfolio') {
-        navigate('/');
-      } else if (tile.id === 'finds') {
+      if (tile.id === 'finds') {
         navigate('/best-finds');
-
+      } else if (tile.id === 'travel') {
+        navigate('/travel-blogs');
       }
     }, 300);
   };

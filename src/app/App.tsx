@@ -13,6 +13,7 @@ import { SelectedWork } from './components/SelectedWork';
 import { Stats } from './components/Stats';
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { MobileHub } from './components/MobileHub';
+import { TravelBlogs, Singapore2022, Japan2023 } from './components/TravelBlogs';
 import { Toaster } from './components/ui/sonner';
 import { Button } from './components/ui/button';
 import { Mail, ArrowLeft, ChevronUp } from 'lucide-react';
@@ -154,6 +155,9 @@ export default function App() {
         <Route path="/" element={<Portfolio />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/personal" element={<MobileHub />} />
+        <Route path="/travel-blogs" element={<TravelBlogs />} />
+        <Route path="/travel-blogs/singapore-2022" element={<Singapore2022 />} />
+        <Route path="/travel-blogs/japan-2023" element={<Japan2023 />} />
         <Route path="/design-works" element={<DesignWorks />} />
         <Route path="/best-finds" element={<BestFinds />} />
         <Route path="/resume" element={<ResumePage />} />
